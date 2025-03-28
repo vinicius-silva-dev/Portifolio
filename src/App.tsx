@@ -8,10 +8,12 @@ import Certificate from "./pages/Certificate"
 import Contact from "./pages/Contact"
 import ProjetosPage from "./pages/Projetos"
 import { PrimeIcons } from 'primereact/api';
+import DetailsProject from "./pages/DetailsProject"
 
 function App() {
   const [width, setWidth] = React.useState(screen.width)
   const [activeMenu, setActiveMenu] = React.useState<boolean>(false)
+  const [activeDark, setActiveDark] = React.useState<boolean>(false)
 
   React.useEffect(() => {
     const handleResize = () => {
@@ -29,7 +31,7 @@ function App() {
   return (
     
     <BrowserRouter>
-      <div className="container" >
+      <div className={`container ${activeDark ? 'dark-container' : ''} `} >
         {
           width <= 1024 && activeMenu === false ?
           <i 
@@ -40,20 +42,21 @@ function App() {
             }}
           />
           : 
-          <SidNav onNavClick={(active) => setActiveMenu(active)}/>
+          <SidNav darkMode={(activeDark) => setActiveDark(activeDark)}/>
         }
         <main 
           
           className={`${activeMenu ? 'disabled' : ''}`}
         >
           <Routes>
-            <Route path="/" element={<Home/>} />
-            <Route path="/about" element={<About />} />
-            <Route path="/projects" element={<ProjetosPage />} />
-            <Route path="/certificate" element={<Certificate />} />
-            <Route path="/contact" element={<Contact />} />
+            <Route path="/" element={<Home activeDark={activeDark}/>} />
+            <Route path="/about" element={<About activeDark={activeDark}/>} />
+            <Route path="/projects" element={<ProjetosPage activeDark={activeDark}/>} />
+            <Route path="/projects/:id" element={<DetailsProject activeDark={activeDark}/>} />
+            <Route path="/certificate" element={<Certificate activeDark={activeDark}/>} />
+            <Route path="/contact" element={<Contact activeDark={activeDark}/>} />
           </Routes>
-          <Footer/>
+          <Footer activeDark={activeDark}/>
         </main>
         {activeMenu && <div className="overlay" onClick={() => setActiveMenu(false)}></div>}
       </div>

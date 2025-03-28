@@ -2,11 +2,15 @@ import React from 'react'
 import ButtonComponent from '../components/ButtonComponent'
 import ImgBio from '../assets/biografia.png'
 
-function About() {
+type AboutProps = {
+  activeDark: boolean
+}
+
+function About({activeDark}: AboutProps) {
   return (
     <div className='about-container'>
       <header className='about-header'>
-        <h1>Sobre mim</h1>
+        <h1 style={{color: activeDark ? "#fff": ""}}>Sobre mim</h1>
         <div className="about-btn">
           <ButtonComponent
             style={{height: '40px'}}
@@ -33,7 +37,7 @@ function About() {
       </header>
 
       <section className='sobre'>
-        <div className="biografia">
+        <div className="biografia"  style={{color: activeDark ? "#fff": ""}}>
           <h2>Olá, Eu sou Vinicius</h2>
           <p>
           Olá! Me chamo Vinicius Silva, sou um Desenvolvedor Full Stack apaixonado por tecnologia e soluções inovadoras. Desde 2021, venho me dedicando ao estudo da programação, sempre buscando aprimorar minhas habilidades e acompanhar as tendências do mercado.

@@ -4,6 +4,10 @@ import Projeto from '../components/Projeto'
 import {projeto} from '../components/Projetos'
 import fintech from '../assets/projects/fintech.png'
 
+type ProjectsProps = {
+  activeDark: boolean
+}
+
 const projetos = [
   ...projeto,
   {
@@ -12,11 +16,11 @@ const projetos = [
     name: 'Fintech (FRONT-END)'
   },
 ]
-function ProjetosPage() {
+function ProjetosPage({activeDark}: ProjectsProps) {
   return (
     <div className='projetosPage-container' >
       <header className='projetosPage-header'>
-        <h1>Projetos</h1>
+        <h1 style={{color: activeDark ? "#fff": ""}}>Projetos</h1>
         <div className="divider-about"></div>
       </header>
 

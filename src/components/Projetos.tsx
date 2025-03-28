@@ -9,6 +9,11 @@ import McDonalds from '../assets/projects/mcdonald.png'
 // import Delivery from '../assets/projects/delivery.png'
 // import Fintech from '../assets/projects/fintech.png'
 
+type ProjetosProps = {
+  activeDark: boolean
+}
+
+
 export const projeto = [
   {
     id: 'to-do-list-backend',
@@ -32,8 +37,8 @@ export const projeto = [
   // },
 ]
 
-function Projetos() {
-  
+function Projetos({activeDark}:ProjetosProps) {
+
   function scrollRight() {
     const carrocel = document.getElementById('projetos')
     carrocel?.scrollBy({
@@ -52,13 +57,13 @@ function Projetos() {
   return (
     <div>
       <div className="title-projects">
-        <h2>Projetos</h2>
+        <h2 className={`${activeDark ? 'title-projects-dark': ''}`}>Projetos</h2>
         <ButtonComponent>
           <a href="/projects">Ver Projetos</a>
         </ButtonComponent>
 
       </div>
-      <div className='projetos-container'>
+      <div className='projetos-container' style={{border: activeDark ? "1px solid #272727": ''}}>
         
         <ul className="projetos" id='projetos'>
           {projeto.map((item) => (
@@ -67,13 +72,14 @@ function Projetos() {
                 id={item.id}
                 img={item.img}
                 name={item.name}
+                activeDark={activeDark}
               />
             </li>
           ))}
         </ul>
         <div className="preview-next">
-          <IoIosArrowBack className='arrows' onClick={scrollLeft}/>
-          <IoIosArrowForward className='arrows' onClick={scrollRight}/>
+          <IoIosArrowBack className='arrows' style={{color: activeDark ? "#fff" : "#000"}} onClick={scrollLeft}/>
+          <IoIosArrowForward className='arrows' style={{color: activeDark ? "#fff" : "#000"}} onClick={scrollRight}/>
         </div>
 
       </div>

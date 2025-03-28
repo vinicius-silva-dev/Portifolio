@@ -7,14 +7,18 @@ import FundamentoNode from '../assets/cetificados/fund-node.png'
 import CleanCode from '../assets/cetificados/clean-code.png'
 import Banco from '../assets/cetificados/banco-sql.png'
 
-function Certificate() {
+type CertificateProps = {
+  activeDark: boolean
+}
+
+function Certificate({activeDark}: CertificateProps) {
   const [visible, setVisible] = React.useState<boolean>(false)
   const [title, setTitle] = React.useState('')
   const [img, setImg] = React.useState('')
   return (
     <div className='certificate-container' >
       <header className='certificate-header'>
-        <h1>Certificate</h1>
+        <h1 style={{color: activeDark ? "#fff": ""}}>Certificate</h1>
         <div className="divider-about"></div>
       </header>
 

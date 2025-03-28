@@ -38,6 +38,7 @@ a{
 .container {
   display: grid;
   /* width: 100vw; */
+
   height: 100vh;
   grid-template-columns: 23% auto;
 }
@@ -83,7 +84,9 @@ a{
 }
 
 /* footer */
-
+.dark-container{
+  background: #151414;
+}
 /* Sidnav */
 .sidnavcontainer{
   display: grid;
@@ -92,6 +95,11 @@ a{
   height: 100%;
   border-right: 1px solid #D5D5D5;
   border-bottom: 1px solid #D5D5D5;
+}
+.dark-sidnavcontainer{
+  background: #151414;
+  border-right: 1px solid #272727;
+  border-bottom: 1px solid #272727;
 }
 
 .perfil{
@@ -107,6 +115,18 @@ a{
   height: 90px;
   margin-left: 10px;
 }
+
+.dark-perfil{
+  border-bottom: 1px solid #272727;
+}
+.dark-perfil p {
+  color: #fff;
+}
+.dark-img {
+  /* background: #fff; */
+  border-radius: 5px;
+}
+
 .sidnav ul {
   margin: 20px;
 }
@@ -121,13 +141,23 @@ a{
 .navigationhover:hover{
   background: #D5D5D5;
 }
+.navigationhover-dark:hover{
+  background: #272727;
+}
+
 .navbackground {
   background: #D5D5D5;
+}
+.navbackground-dark{
+  background: #272727;
 }
 .navigation {
   display: flex;
   align-items: center;
   gap: 10px;
+}
+.navigation-dark {
+  color: #fff;
 }
 .img-sidnav{
   max-width: 30px;
@@ -144,11 +174,13 @@ a{
 }
 
 @media (max-width: 768px) {
+
   .sidnavcontainer {
     position: absolute;
     background: #fff;
     z-index: 2;
   }
+
 }
 
 @media (max-width: 500px) {
@@ -178,6 +210,7 @@ a{
 .apresentacao {
   font-weight: bold;
   font-size: 2rem;
+  margin-bottom: 20px;
   color: #978F8F;
 }
 
@@ -207,30 +240,45 @@ a{
   margin-bottom: 15px
 }
 @media (max-width: 500px){
+  .home-container {
+    margin: 40px 0px 20px 10px;
+  }
+  .header{
+    margin-top: 30px !important;
+    text-align: center !important;
+  }
   .apresentacao {
     font-size: 1.1rem;
-    width: 390px;
+    width: 100%;
   }
 
   .header span {
-    width: 50%;
+    width: 100%;
     font-size: 1.1rem;
   }
   .header-rodape{
+    justify-self: center;
     font-size: 0.758rem !important;
 
   }
   .home-btn{
     display: flex;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
   }
   .btn{
     padding: 0.5rem;
-    width: 130px;
+    width: 125px;
     font-size: 12px;
     align-self: center;
   }
 
+}
+
+@media (max-width: 768px){
+  .header{
+    margin-top: 30px !important;
+    text-align: justify;
+  }
 }
 /* header */
 
@@ -258,6 +306,9 @@ a{
   justify-content: space-between;
   /* border: 1px solid; */
 }
+.title-projects-dark {
+  color: #fff
+}
 .preview-next{
   display: flex;
   justify-content: space-between;
@@ -276,12 +327,13 @@ a{
 }
 .projetos{
   display: flex;
+  justify-content: space-around;
   width: 100%;
   max-width: 100%;
   overflow-x: auto;
   margin: 15px auto auto 15px;
   
-  gap: 30px;
+  gap: 10px;
 }
 
 @media (max-width: 500px) {
@@ -345,6 +397,66 @@ a{
 .btn-projeto img{
   max-width: 90%;
 }
+
+/* Detalhes projetos */
+.datailsProject-container{
+  display: grid;
+  grid-template-rows: 180px 200px auto;
+  margin: 30px 10px 20px 50px;
+  height: 90vh;
+  overflow-y: scroll !important;
+}
+
+.detailsProject-header{
+  display: grid;
+  grid-template-rows: 60px 120px;
+  width: 35%;
+}
+
+.cardProject{
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 120px;
+  /* border: 1px solid; */
+}
+
+.anoProject{
+  width: 40%;
+  height: 90%;
+  text-align: center;
+  line-height: 10px;
+  background: #D5D5D5;
+  border-right: 1px solid;
+}
+.categoria{
+  align-self: center;
+  height: 90%;
+  width: 60%;
+  text-align: center;
+  line-height: 20px;
+  background: #D5D5D5;
+  /* border: 1px solid; */
+}
+h5{
+  line-height: 1px;
+}
+
+.detailsProject-main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-top: 50px;
+}
+
+.photosProject img{
+  /* border: 1px solid; */
+  display: block;
+  max-width: 70%;
+  margin-bottom: 20px;
+  margin-left: 20px;
+}
+
+/* Detalhes projetos */
 /* projetos */
 
 /* stasks */
@@ -378,7 +490,7 @@ a{
 /* About */
 .about-container{
   display: grid;
-  margin: 20px auto 20px 50px;
+  margin: 30px 10px 20px 50px;
   height: 90vh;
   overflow-y: scroll !important;
 }
@@ -394,7 +506,7 @@ a{
 }
 
 .divider-about{
-  height: 2px;
+  height: 1px;
   background: #D5D5D5;
   margin-top: 30px;
 }
@@ -415,7 +527,7 @@ a{
   background: #D5D5D5;
 }
 .residencia span{
-  color: #978F8F;
+  color: #272727;
 }
 
 .tempo-experiencia{
@@ -426,7 +538,7 @@ a{
 }
 .tempo-experiencia span{
   font-size: 14px;
-  color: #978F8F;
+  color: #272727;
 }
 
 .sobre{
@@ -444,6 +556,9 @@ font-size: 16px;
 margin-top: 25px;
 }
 @media (max-width: 500px){
+  .about-container {
+    margin: 50px 10px 20px 10px;
+  }
   .card-about{
     width: 100%;
   }

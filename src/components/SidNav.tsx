@@ -1,50 +1,64 @@
 import React from 'react'
 import PerfilImg from '../assets/IMG_20211212_185802 1.png'
+
 import Whatsapp from '../assets/whatsapp.png'
 import Linkedin from '../assets/linkedin.png'
 import Github from '../assets/github.png'
+
+import WhatsappDark from '../assets/footer-sidnav/whatsapp-dark.png'
+import LinkedinDark from '../assets/footer-sidnav/linkedIn-dark.png'
+import GitihubDark from '../assets/footer-sidnav/github-dark.png'
+
 import Home from '../assets/home.png'
 import About from '../assets/about.png'
 import Projetos from '../assets/certificate.png'
 import Certificates from '../assets/certificado2.png'
 import Contact from '../assets/contact.png'
+
+import HomeDark from '../assets/dark/home-dark.png'
+import AboutDark from '../assets/dark/about-dark.png'
+import ProjetosDark from '../assets/dark/projetos-dark.png'
+import CertificadosDark from '../assets/dark/certificado-dark.png'
+import ContatoDark from '../assets/dark/contato-dark.png'
+
 import Dark from '../assets/dark.png'
+import DarkDark from '../assets/dark-dark.png'
 import { NavLink } from 'react-router-dom'
-import ProjetosPage from '../pages/Projetos'
 
 type SidNavProps = React.ComponentProps<'input'> & {
   activeSidNav?: React.Dispatch<React.SetStateAction<boolean>>
-  onNavClick: (active: boolean) => void
+  darkMode: (activeDark: boolean) => void
 }
 
 function SidNav(
-  {onNavClick}: SidNavProps,
+  {darkMode}: SidNavProps,
 ) {
   const [active, setActive] = React.useState<string | null>(null)
+  const [activeDark, setActiveDark] = React.useState(false)
 
   const menu = [
     {
-      img: Home,
+      img: activeDark ? HomeDark : Home,
       name: "Home",
       path: "/"
     },
     {
-      img: About,
+      img: activeDark ? AboutDark : About,
       name: "About",
       path: "/about"
     },
     {
-      img: Projetos,
+      img: activeDark ? ProjetosDark : Projetos,
       name: "Projetos",
       path: "/projects"
     },
     {
-      img: Certificates,
+      img: activeDark ? CertificadosDark : Certificates,
       name: "Certificate",
       path: "/certificate"
     },
     {
-      img: Contact,
+      img: activeDark ? ContatoDark : Contact,
       name: "Contact",
       path: "/contact"
     },
@@ -56,8 +70,8 @@ function SidNav(
   const github = "https://github.com/viniciusvss120"
 
   return (
-    <div className='sidnavcontainer'>
-      <div className="perfil">
+    <div className={`sidnavcontainer ${activeDark  ? 'dark-sidnavcontainer' : ''}`} style={{background: activeDark ? "#151414" : ""}}>
+      <div className={`perfil ${activeDark === true ? 'dark-perfil' : ''}`}>
         <img className='perfilImg' src={PerfilImg} alt="perfil" />
         <div className="nomePerfil">
           <p 
@@ -70,7 +84,16 @@ function SidNav(
               Desenvolvedor Full Stack
             </span>
           </p>
-          <img style={{ maxWidth: '20px', cursor: 'pointer'}} src={Dark} alt="" />
+          <img 
+            className='dark-img'
+            style={{ maxWidth: '20px', cursor: 'pointer'}} 
+            src={activeDark ? DarkDark : Dark} 
+            alt="dark" 
+            onClick={() => {
+              setActiveDark(!activeDark)
+              darkMode(!activeDark)
+            }}
+          />
         </div>
       </div>
 
@@ -80,13 +103,14 @@ function SidNav(
             <NavLink to={item.path}>
               <li 
                 key={item.name}
-                className={`navigation ${
-                  active === item.name ? "navbackground": "navigationhover"
+                className={`navigation ${activeDark ? 'navigation-dark' : ''}  ${
+                  active === item.name ? `navbackground ${activeDark ? 'navbackground-dark' : ''} `: `navigationhover 
+                  ${activeDark ? 'navigationhover-dark' : ''} `
                   }`
                 }
+                style={{border: activeDark ? "1px solid #272727": ''}}
                 onClick={() => {
                   setActive(item.name)
-                  // onNavClick(false)
                 }}
               >
                 <img className='img-sidnav' src={item.img} alt="" />
@@ -99,20 +123,21 @@ function SidNav(
       </nav>
 
       <div className="footer-contato">
-        <ul>
+        <ul style={{border: activeDark ? "1px solid #272727": ''}}>
           <li>
             <a href={`https://wa.me/${phoneNumber}`} target='_blank'>
-              <img src={Whatsapp} alt="whatsapp" />
+              
+              <img src={activeDark ? WhatsappDark : Whatsapp} alt="whatsapp" />
             </a>
           </li>
           <li>
             <a href={linkedin} target='_blank'>
-              <img src={Linkedin} alt="linkedin" />
+              <img src={activeDark ? LinkedinDark : Linkedin} alt="linkedin" />
             </a>
           </li>
           <li>
             <a href={github} target='_blank'>
-              <img src={Github} alt="" />
+              <img src={activeDark ? GitihubDark : Github} alt="github" />
             </a>
           </li>
         </ul>

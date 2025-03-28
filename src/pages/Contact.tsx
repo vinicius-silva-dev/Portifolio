@@ -1,8 +1,17 @@
 import React from 'react'
 import ButtonComponent from '../components/ButtonComponent'
+
 import Whatsapp from '../assets/whatsapp.png'
 import Linkedin from '../assets/linkedin.png'
 import Github from '../assets/github.png'
+
+import WhatsappDark from '../assets/footer-sidnav/whatsapp-dark.png'
+import LinkedinDark from '../assets/footer-sidnav/linkedIn-dark.png'
+import GitihubDark from '../assets/footer-sidnav/github-dark.png'
+
+type ContactProps = {
+  activeDark: boolean
+}
 
 const Style = {
   width: '100%',
@@ -15,17 +24,17 @@ const phoneNumber = "5569993062435"
 const linkedin = "https://www.linkedin.com/in/vinicius-silva-souza-08422b1a2/"
 const github = "https://github.com/viniciusvss120"
 
-function Contact() {
+function Contact({activeDark}: ContactProps) {
   return (
     <div className='contact-container'>
-      <header className='contact-header'>
+      <header className='contact-header' style={{color: activeDark ? "#fff": ""}}>
         <h2>Entre em contato</h2>
         <p>
           Sinta-se à vontade para entra em contato, basta preencher este formulário ou <br />
           entre em contato através do WhatsApp e/ou Linkedin.
         </p>
       </header>
-      <section className='contact'>
+      <section className='contact' style={{color: activeDark ? "#fff": ""}}>
         <form className='form' onSubmit={() => event?.preventDefault()}>
           <div className="style-form">
             <label>Nome</label>
@@ -51,17 +60,17 @@ function Contact() {
             <ul>
               <li>
                 <a href={`https://wa.me/${phoneNumber}`} target='_blank'>
-                  <img className='redes-img' src={Whatsapp} alt="whatsapp" />
+                  <img className='redes-img' src={activeDark ? WhatsappDark : Whatsapp} alt="whatsapp" />
                 </a>
               </li>
               <li>
                 <a href={linkedin} target='_blank'>
-                  <img className='redes-img' src={Linkedin} alt="linkedin" />
+                  <img className='redes-img' src={activeDark ? LinkedinDark : Linkedin} alt="linkedin" />
                 </a>
               </li>
               <li>
                 <a href={github} target='_blank'>
-                  <img className='redes-img' src={Github} alt="" />
+                  <img className='redes-img' src={activeDark ? GitihubDark : Github} alt="" />
                 </a>
               </li>
             </ul>
