@@ -14,6 +14,7 @@ import Next from '../assets/stacks/next.png'
 import HTML from '../assets/stacks/html.png'
 import Css from '../assets/stacks/css.png'
 import Mongo from '../assets/stacks/mongo.png'
+import { NavLink } from 'react-router-dom'
 // import ToDoList from '../assets/to-do-list.png'
 // import Footer from '../components/Footer';
 // import ProjetosComponets from '../components/ProjetosComponent';
@@ -49,19 +50,19 @@ function Home({activeDark}: HomeProps) {
         <div className='home-btn'>
           <ButtonComponent
           >
-            <a href="./contact">Entre em contato</a>
+            <NavLink to="./contact">Entre em contato</NavLink>
           </ButtonComponent>
           <ButtonComponent>
-            <a href="./about">Sobre mim</a>
+            <NavLink to="./about">Sobre mim</NavLink>
           </ButtonComponent>
-          <a 
-            href='/novo_curriculo.pdf'
+          <NavLink 
+            to='/novo_curriculo.pdf'
             download="novo_curriculo.pdf"
             className='btn'
             style={{background: '#167D05', color: '#fff'}}
           >
             Baixar CV
-          </a>
+          </NavLink>
   
         </div>
 

@@ -6,6 +6,7 @@ import VsSysten from '../assets/projects/vs-systen.png'
 import Chamados from '../assets/projects/chamados-gima.png'
 import ButtonComponent from './ButtonComponent';
 import McDonalds from '../assets/projects/mcdonald.png'
+import { NavLink } from 'react-router-dom';
 // import Delivery from '../assets/projects/delivery.png'
 // import Fintech from '../assets/projects/fintech.png'
 
@@ -59,7 +60,7 @@ function Projetos({activeDark}:ProjetosProps) {
       <div className="title-projects">
         <h2 className={`${activeDark ? 'title-projects-dark': ''}`}>Projetos</h2>
         <ButtonComponent>
-          <a href="/projects">Ver Projetos</a>
+          <NavLink to="/projects">Ver Projetos</NavLink>
         </ButtonComponent>
 
       </div>

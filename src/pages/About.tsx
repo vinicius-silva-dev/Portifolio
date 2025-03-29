@@ -1,6 +1,7 @@
 import React from 'react'
 import ButtonComponent from '../components/ButtonComponent'
 import ImgBio from '../assets/biografia.png'
+import { NavLink } from 'react-router-dom'
 
 type AboutProps = {
   activeDark: boolean
@@ -15,12 +16,12 @@ function About({activeDark}: AboutProps) {
           <ButtonComponent
             style={{height: '40px'}}
           >
-            <a href="/contact">Entre em contato</a>
+            <NavLink to="/contact">Entre em contato</NavLink>
           </ButtonComponent>
           <ButtonComponent
             style={{height: '40px'}}
           >
-            <a href="/certificate">Ver certificados</a>
+            <NavLink to="/certificate">Ver certificados</NavLink>
           </ButtonComponent>
         </div>
         <div className="divider-about"></div>
