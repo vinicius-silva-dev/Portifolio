@@ -3,6 +3,8 @@ import React from 'react'
 import Projeto from '../components/Projeto'
 import {projeto} from '../components/Projetos'
 import fintech from '../assets/projects/fintech.png'
+import delivery from '../assets/projects/delivery.png'
+import { NavLink } from 'react-router-dom'
 
 type ProjectsProps = {
   activeDark: boolean
@@ -14,6 +16,11 @@ const projetos = [
     id: 'Fintech',
     img: `${fintech}`,
     name: 'Fintech (FRONT-END)'
+  },
+  {
+    id: 'Delivery-React-Native',
+    img: `${delivery}`,
+    name: 'Delivery (FRONT-END)'
   },
 ]
 function ProjetosPage({activeDark}: ProjectsProps) {
@@ -27,12 +34,20 @@ function ProjetosPage({activeDark}: ProjectsProps) {
       <section className='projetosPage'>
         <ul>
           {projetos.map((item) => (
-            <li 
-              key={item.id}
-            >
-              <img src={item.img} alt="" />
-              <span>{item.name}</span>
-            </li>
+           
+
+              <li 
+                key={item.id}
+              >
+                <NavLink to={`/projects/${item.id}`}>
+                  <img src={item.img} alt="" />
+                  <p
+                   style={{background: '#D5D5D5', width: '100%', borderRadius: '10px', opacity: '0.8'}}
+                  >
+                    <span>{item.name}</span>
+                  </p>
+                </NavLink>
+              </li>
           ))}
         </ul>
         {/* <Dialog 

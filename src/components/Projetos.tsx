@@ -30,11 +30,11 @@ export const projeto = [
     img: `${Chamados}`,
     name: 'Chamados-Gima (FRONT-END)'
   },
-  // {
-  //   id: 'mcdonald',
-  //   img: `${McDonalds}`,
-  //   name: 'McDonalds (FRONT-END)'
-  // },
+  {
+    id: 'mcdonald',
+    img: `${McDonalds}`,
+    name: 'McDonalds (FRONT-END)'
+  },
 ]
 
 function Projetos({activeDark}:ProjetosProps) {

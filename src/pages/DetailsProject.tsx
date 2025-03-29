@@ -42,7 +42,7 @@ function DetailsProject({ activeDark}: DetailsProjectProps) {
       <button
         style={styleButton}
       >
-        <a href={'/projects'}>Todos os projetos</a>
+        <NavLink to={'/projects'}>Todos os projetos</NavLink>
         
       </button>
 

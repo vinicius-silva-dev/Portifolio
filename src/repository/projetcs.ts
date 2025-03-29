@@ -4,6 +4,12 @@ import VsSysten from '../assets/projects/vs-systen.png'
 import Chamados from '../assets/projects/chamados-gima.png'
 import Chamdos2 from '../assets/projects/chamados2.png'
 
+import Fintech from '../assets/projects/fintech.png'
+
+import McDonald from '../assets/projects/mcdonald.png'
+
+import delivery from '../assets/projects/delivery.png'
+
 export const projects = [
   {
     id: 'to-do-list-backend',
@@ -48,6 +54,39 @@ export const projects = [
     photos: [
       Chamados,
       Chamdos2
+    ]
+  },
+  {
+    id: 'Fintech',
+    nameProject: 'Fintech',
+    ano: 2025,
+    categoria: 'FRONT-END',
+    description: 'Sistema dashboard onde ilustra diversos dados e estatisticas da empresa, nesse sistemo podemos vizualizar as vendas por cliente, podemos filtra quanto tivemos de vendas, recebimento e os que tem para receber em determinado mês.',
+    tecnologias: ['React', 'Typescript'],
+    photos: [
+      Fintech
+    ]
+  },
+  {
+    id: 'mcdonald',
+    nameProject: `Mc'Donald`,
+    ano: 2023,
+    categoria: 'FRONT-END',
+    description: 'Site clone do McDonald.',
+    tecnologias: ['Vue.js'],
+    photos: [
+      McDonald
+    ]
+  },
+  {
+    id: 'Delivery-React-Native',
+    nameProject: `Delivery`,
+    ano: 2024,
+    categoria: 'FRONT-END',
+    description: 'App de delivery, onde pode ser utilizado em lanchonetes e restaurantes, facilitando o atendimento ao cliente e proporcinado uma experiência agradavel ao cliente. App desenvolvido no evento NLW expert da Rocketseat, trilha React Native.',
+    tecnologias: ['React Native'],
+    photos: [
+      delivery
     ]
   },
 ]
