@@ -457,6 +457,14 @@ h5{
   margin-left: 20px;
 }
 
+@media(max-width: 768px) {
+  .detailsProject-header{
+    width: 90%;
+  }
+  .detailsProject-main {
+    grid-template-columns: 1fr;
+  }
+}
 /* Detalhes projetos */
 /* projetos */
 
