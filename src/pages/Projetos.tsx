@@ -3,6 +3,7 @@ import React from 'react'
 import Projeto from '../components/Projeto'
 import {projeto} from '../components/Projetos'
 import fintech from '../assets/projects/fintech.png'
+import McDonalds from '../assets/projects/mcdonald.png'
 import delivery from '../assets/projects/delivery.png'
 import { NavLink } from 'react-router-dom'
 
@@ -16,6 +17,11 @@ const projetos = [
     id: 'Fintech',
     img: `${fintech}`,
     name: 'Fintech (FRONT-END)'
+  },
+  {
+    id: 'mcdonald',
+    img: `${McDonalds}`,
+    name: 'McDonalds (FRONT-END)'
   },
   {
     id: 'Delivery-React-Native',

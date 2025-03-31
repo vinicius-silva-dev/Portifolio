@@ -38,7 +38,8 @@ function App() {
             className="pi pi-bars"
             onClick={() => setActiveMenu(!activeMenu)}
             style={{fontSize: '40px',
-              position:'fixed'
+              position:'fixed',
+              color: activeDark ? '#fff' : ''
             }}
           />
           : 

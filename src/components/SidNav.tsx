@@ -72,7 +72,8 @@ function SidNav(
   return (
     <div className={`sidnavcontainer ${activeDark  ? 'dark-sidnavcontainer' : ''}`} style={{background: activeDark ? "#151414" : ""}}>
       <div className={`perfil ${activeDark === true ? 'dark-perfil' : ''}`}>
-        <img className='perfilImg' src={PerfilImg} alt="perfil" />
+        {screen.width <= 500 ? '' : <img className='perfilImg' src={PerfilImg} alt="perfil" />}
+        
         <div className="nomePerfil">
           <p 
             style={{fontWeight: 600, fontSize: '1.3rem'}}

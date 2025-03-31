@@ -123,8 +123,9 @@ a{
   color: #fff;
 }
 .dark-img {
+  margin-top: 20px;
   /* background: #fff; */
-  border-radius: 5px;
+  /* border-radius: 5px; */
 }
 
 .sidnav ul {
