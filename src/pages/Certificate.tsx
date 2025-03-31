@@ -1,11 +1,6 @@
 import React from 'react'
-import { Button } from 'primereact/button';
 import { Dialog } from 'primereact/dialog';
 import { certificados } from '../repository/certificados';
-import ReactTypescript from '../assets/cetificados/certif-react-typescript.png'
-import FundamentoNode from '../assets/cetificados/fund-node.png'
-import CleanCode from '../assets/cetificados/clean-code.png'
-import Banco from '../assets/cetificados/banco-sql.png'
 
 type CertificateProps = {
   activeDark: boolean
@@ -36,16 +31,19 @@ function Certificate({activeDark}: CertificateProps) {
             </li>
           ))}
         </ul>
-        <Dialog 
-          header={title}
-          visible={visible}
-          style={{ width: '45vw'}} 
-          onHide={() => {if (!visible) return; setVisible(false); }}
-        >
-          <div className="dialog">
-            <img src={img} alt="" />
-          </div>
-        </Dialog>
+        {
+          screen.width <= 768 ? '' :
+          <Dialog 
+            header={title}
+            visible={visible}
+            style={{ width: '45vw'}} 
+            onHide={() => {if (!visible) return; setVisible(false); }}
+          >
+            <div className="dialog">
+              <img src={img} alt="" />
+            </div>
+          </Dialog>
+        }
       </section>
     </div>
   )
