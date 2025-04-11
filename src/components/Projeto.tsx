@@ -8,28 +8,41 @@ type ProjetoProps = {
   id: string,
   img: string,
   name: string,
+  category?: string,
+  description?: string,
+  tecnologias?: string[]
   activeDark: boolean
 }
 
-function Projeto({id, img, name, activeDark}: ProjetoProps) {
+function Projeto({
+  id,
+  img,
+  name,
+  category,
+  description,
+  tecnologias,
+  activeDark
+}: ProjetoProps) {
   return (
     <div className='projeto-container' style={{border: activeDark ? "1px solid #272727": ''}}>
-      <div className="img">
+      <div className="imgProjeto">
         <img src={img} alt="" />
       </div>
-      <span className='name-projeto' style={{color: activeDark ? "#fff":"#000"}}>{name}</span>
-      <div className="btn-projeto-container">
-        <button className='btn-projeto'>
-          {/* <span>Git Hub</span> */}
-          <a href={`https://github.com/vinicius-silva-dev/${id}`} target='_blank'>
-            <img src={GitHub} alt="" />
-          </a>
-        </button>
-        <button className='btn-projeto'>
-          <NavLink to={`/projects/${id}`} >
-            <GoArrowRight style={{fontSize: '40px', color: '#978F8F'}}/>
-          </NavLink>
-        </button>
+      <div className='title-projeto' style={{color: activeDark ? " #fff": ''}}>
+        <p>{name}</p>
+        <span>{category}</span>
+      </div>
+      <div className="description-projeto" style={{color: activeDark ? " #fff": ''}}>
+        <p>{description}</p>
+      </div>
+      <div className='tecnologias-projeto'>
+        <ul className="tecnologias">
+          {tecnologias?.map((item) => (
+            <li>
+              <img src={item} alt="" />
+            </li>
+          ))}
+        </ul>
       </div>
     </div>
   )

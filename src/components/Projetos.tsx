@@ -1,14 +1,20 @@
 import React from 'react'
 import { IoIosArrowForward,IoIosArrowBack  } from "react-icons/io";
 import Projeto from './Projeto';
+import ButtonComponent from './ButtonComponent';
+
 import ToDoList from '../assets/projects/to-do-list.png'
 import VsSysten from '../assets/projects/vs-systen.png'
 import Chamados from '../assets/projects/chamados-gima.png'
-import ButtonComponent from './ButtonComponent';
-import McDonalds from '../assets/projects/mcdonald.png'
+import TypeScript from '../assets/projects/tecnologias/typescript.png'
+import Nodejs from '../assets/projects/tecnologias/nodejs.png'
+import Nestjs from '../assets/projects/tecnologias/nestjs.png'
+import Vue from '../assets/projects/tecnologias/vue.png'
+import Html from '../assets/projects/tecnologias/html.png'
+import Css from '../assets/projects/tecnologias/css.png'
+
 import { NavLink } from 'react-router-dom';
-// import Delivery from '../assets/projects/delivery.png'
-// import Fintech from '../assets/projects/fintech.png'
+
 
 type ProjetosProps = {
   activeDark: boolean
@@ -19,17 +25,26 @@ export const projeto = [
   {
     id: 'to-do-list-backend',
     img: `${ToDoList}`,
-    name: 'To-Do-List (BACK-END)'
+    name: 'To-Do-List',
+    category: 'Back-end',
+    description: 'API de gerenciamento e o organização de tarefas',
+    tecnologias: [`${TypeScript}`, `${Nodejs}`, `${Nestjs}`]
   },
   {
     id: 'vs-systen',
     img: `${VsSysten}`,
-    name: 'VS-SYSTEN (FRONT-END)'
+    name: 'VS-SYSTEN',
+    category: 'Front-end',
+    description: 'Sistema de gestão empresarial,com diversas funcionalidades e módulos.',
+    tecnologias: [`${Vue}`, `${Html}`, `${Css}`]
   },
   {
     id: 'Chamados-Gima',
     img: `${Chamados}`,
-    name: 'Chamados-Gima (FRONT-END)'
+    name: 'Chamados-Gima',
+    category: 'Back-end',
+    description: 'Sistema de gerenciamento de chamados e tarefas.',
+    tecnologias: [`${Vue}`, `${Html}`, `${Css}`]
   },
 
 ]
@@ -69,6 +84,9 @@ function Projetos({activeDark}:ProjetosProps) {
                 id={item.id}
                 img={item.img}
                 name={item.name}
+                category={item.category}
+                description={item.description}
+                tecnologias={item.tecnologias}
                 activeDark={activeDark}
               />
             </li>
