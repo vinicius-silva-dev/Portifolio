@@ -24,7 +24,15 @@ function Projeto({
   activeDark
 }: ProjetoProps) {
   return (
-    <div className='projeto-container' style={{border: activeDark ? "1px solid #272727": ''}}>
+    <div 
+    className='projeto-container' 
+    style={
+      {
+        border: activeDark ? "1px solid #272727": '',
+        background: !activeDark ?  '#D5D5D5' : ''
+      }
+    }
+    >
       <div className="imgProjeto">
         <img src={img} alt="" />
       </div>

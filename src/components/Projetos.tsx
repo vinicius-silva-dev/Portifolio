@@ -92,10 +92,15 @@ function Projetos({activeDark}:ProjetosProps) {
             </li>
           ))}
         </ul>
-        <div className="preview-next">
-          <IoIosArrowBack className='arrows' style={{color: activeDark ? "#fff" : "#000"}} onClick={scrollLeft}/>
-          <IoIosArrowForward className='arrows' style={{color: activeDark ? "#fff" : "#000"}} onClick={scrollRight}/>
-        </div>
+        {
+          projeto.length > 3 ? (
+            <div className="preview-next">
+              <IoIosArrowBack className='arrows' style={{color: activeDark ? "#fff" : "#000"}} onClick={scrollLeft}/>
+               <IoIosArrowForward className='arrows' style={{color: activeDark ? "#fff" : "#000"}} onClick={scrollRight}/>
+            </div>
+          ): ''
+        }
+   
 
       </div>
     </div>
