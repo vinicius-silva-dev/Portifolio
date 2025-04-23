@@ -72,6 +72,7 @@ function DetailsProject({ activeDark}: DetailsProjectProps) {
             <img src={img} alt="" />
           ))}
         </div>
+
         <div 
           className="description"
           style={{color: activeDark ? '#fff': ''}}
@@ -82,6 +83,15 @@ function DetailsProject({ activeDark}: DetailsProjectProps) {
               <li style={{listStyle: 'initial', fontWeight: 500}}>{item}</li>
             ))}
           </ul>
+          <button  
+            style={{
+              background: activeDark ? '': '#ddd',
+              color: activeDark ? '#fff' : '#000'
+            }}
+            className='btn-git'
+           >
+            <NavLink to={`https://github.com/vinicius-silva-dev/${project?.id}`} target='_blank'>Git Hub</NavLink>
+          </button>
         </div>
       </div>
     </div>

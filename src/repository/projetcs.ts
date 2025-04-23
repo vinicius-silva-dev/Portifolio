@@ -1,6 +1,8 @@
 import ToDoList from '../assets/projects/to-do-list.png'
 import VsSysten from '../assets/projects/vs-systen.png'
 
+import FestFeet from '../assets/projects/fest-feet2.png'
+
 import Chamados from '../assets/projects/chamados-gima.png'
 import Chamdos2 from '../assets/projects/chamados2.png'
 
@@ -12,14 +14,14 @@ import delivery from '../assets/projects/delivery.png'
 
 export const projects = [
   {
-    id: 'to-do-list-backend',
-    nameProject: 'To-Do-List (BACK-END)',
+    id: 'Nest-Fast-Feet',
+    nameProject: 'Fast-Feet',
     ano: 2024,
     categoria: 'BACK-END',
-    description: 'API de gerenciamento de tarefas, onde é possível criar novas tarefas, listar todas as tarefas e filtrar também, é possível editar e deletar as tarfas.',
-    tecnologias: ['Node.js', 'Typescript', 'Fastify', 'PostgreSQL'],
+    description: 'API para controle de encomendas de uma transportadora.',
+    tecnologias: ['Node.js', 'Typescript', 'Nest.js', 'Prisma', 'Vitest', 'PostgreSQL'],
     photos: [
-      ToDoList,
+      FestFeet,
     ]
   },
   {
@@ -30,7 +32,7 @@ export const projects = [
     description: 'API de gerenciamento de tarefas, onde é possível criar novas tarefas, listar todas as tarefas e filtrar também, é possível editar e deletar as tarfas.',
     tecnologias: ['Node.js', 'Typescript', 'Fastify', 'PostgreSQL'],
     photos: [
-      VsSysten,
+      ToDoList,
     ]
   },
   {

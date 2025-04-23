@@ -1,7 +1,10 @@
 import React from 'react'
 // import { Dialog } from 'primereact/dialog';
-import Projeto from '../components/Projeto'
+// import Projeto from '../components/Projeto'
 import {projeto} from '../components/Projetos'
+import toDo from '../assets/projects/to-do2.png'
+import FestFeet from '../assets/projects/fest-feet.png'
+import vsSysten from '../assets/projects/vs-systen2.png'
 import fintech from '../assets/projects/fintech.png'
 import McDonalds from '../assets/projects/mcdonald.png'
 import delivery from '../assets/projects/delivery.png'
@@ -12,7 +15,21 @@ type ProjectsProps = {
 }
 
 const projetos = [
-  ...projeto,
+  {
+    id: 'vs-systen',
+    img: `${vsSysten}`,
+    name: 'Vs-Systen'
+  },
+  {
+    id: 'to-do-list-backend',
+    img: `${toDo}`,
+    name: 'To Do List'
+  },
+  {
+    id: 'Nest-Fast-Feet',
+    img: `${FestFeet}`,
+    name: 'FestFeet'
+  },
   {
     id: 'Fintech',
     img: `${fintech}`,

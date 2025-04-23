@@ -80,15 +80,18 @@ function Projetos({activeDark}:ProjetosProps) {
         <ul className="projetos" id='projetos'>
           {projeto.map((item) => (
             <li>
-              <Projeto
-                id={item.id}
-                img={item.img}
-                name={item.name}
-                category={item.category}
-                description={item.description}
-                tecnologias={item.tecnologias}
-                activeDark={activeDark}
-              />
+              <NavLink to={`/projects/${item.id}`}>
+
+                <Projeto
+                  id={item.id}
+                  img={item.img}
+                  name={item.name}
+                  category={item.category}
+                  description={item.description}
+                  tecnologias={item.tecnologias}
+                  activeDark={activeDark}
+                />
+              </NavLink>
             </li>
           ))}
         </ul>
