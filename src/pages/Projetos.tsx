@@ -4,6 +4,8 @@ import React from 'react'
 import {projeto} from '../components/Projetos'
 import toDo from '../assets/projects/to-do2.png'
 import FestFeet from '../assets/projects/fest-feet.png'
+import FindAFriend from '../assets/projects/find-a-friend.png'
+import Daily from '../assets/projects/daily.png'
 import vsSysten from '../assets/projects/vs-systen2.png'
 import fintech from '../assets/projects/fintech.png'
 import McDonalds from '../assets/projects/mcdonald.png'
@@ -26,9 +28,19 @@ const projetos = [
     name: 'To Do List'
   },
   {
+    id: 'daily-diet',
+    img: `${Daily}`,
+    name: 'Daily Diet'
+  },
+  {
     id: 'Nest-Fast-Feet',
     img: `${FestFeet}`,
     name: 'FestFeet'
+  },
+  {
+    id: 'find-a-friend',
+    img: `${FindAFriend}`,
+    name: 'Find a Friend'
   },
   {
     id: 'Fintech',

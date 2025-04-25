@@ -2,6 +2,11 @@ import ToDoList from '../assets/projects/to-do-list.png'
 import VsSysten from '../assets/projects/vs-systen.png'
 
 import FestFeet from '../assets/projects/fest-feet2.png'
+import FestFeet3 from '../assets/projects/fest-feet3.png'
+
+import FindAFriend2 from '../assets/projects/find-a-friend2.png'
+
+import Daily from '../assets/projects/daily.png'
 
 import Chamados from '../assets/projects/chamados-gima.png'
 import Chamdos2 from '../assets/projects/chamados2.png'
@@ -14,14 +19,38 @@ import delivery from '../assets/projects/delivery.png'
 
 export const projects = [
   {
+    id: 'daily-diet',
+    nameProject: 'Daily Diet',
+    ano: 2024,
+    categoria: 'BACK-END',
+    description: 'API para controle diário de dieta, onde está sendo utilizado Fastify, Knex e Typescript.',
+    tecnologias: ['Node.js', 'Typescript', 'Fastify', 'Knex'],
+    photos: [
+      Daily,
+    ]
+  },
+  {
     id: 'Nest-Fast-Feet',
     nameProject: 'Fast-Feet',
     ano: 2024,
     categoria: 'BACK-END',
-    description: 'API para controle de encomendas de uma transportadora.',
+    description: 'API para controle de encomendas de uma transportadora, onde está sendo utilizado o Nest.js como framework e conceitos de SOLID, testes e integração com banco de dados.',
     tecnologias: ['Node.js', 'Typescript', 'Nest.js', 'Prisma', 'Vitest', 'PostgreSQL'],
     photos: [
       FestFeet,
+      FestFeet3
+    ]
+  },
+  {
+    id: 'find-a-friend',
+    nameProject: 'Find A Friend',
+    ano: 2024,
+    categoria: 'BACK-END',
+    description: 'API para adoção de animais, onde está sendo utilizado conceitos de SOLID e testes.',
+    tecnologias: ['Node.js', 'Typescript', 'Prisma', 'Vitest', 'PostgreSQL'],
+    photos: [
+      FindAFriend2,
+      
     ]
   },
   {
@@ -74,7 +103,7 @@ export const projects = [
     nameProject: `Mc'Donald`,
     ano: 2023,
     categoria: 'FRONT-END',
-    description: 'Site clone do McDonald.',
+    description: 'Site clone do McDonald, desenvolvido para fins de estudo e prática com o Vue.js.',
     tecnologias: ['Vue.js'],
     photos: [
       McDonald
