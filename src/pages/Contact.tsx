@@ -25,6 +25,28 @@ const linkedin = "https://www.linkedin.com/in/vinicius-silva-souza-08422b1a2/"
 const github = "https://github.com/viniciusvss120"
 
 function Contact({activeDark}: ContactProps) {
+  const [name, setName] = React.useState('')
+  const [email, setEmail] = React.useState('')
+  const [mensagem, setMensagem] = React.useState('')
+
+  async function submmitForm() {
+    try {
+      const result = await fetch('http://localhost:3001/contatoportifolio', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({name, email, mensagem})
+      })
+
+      const json = await result.json()
+      if(result) {
+        console.log(json)
+      }
+    } catch (error) {
+      console.log(error)
+    }
+  }
   return (
     <div className='contact-container'>
       <header className='contact-header' style={{color: activeDark ? "#fff": ""}}>
@@ -38,20 +60,21 @@ function Contact({activeDark}: ContactProps) {
         <form className='form' onSubmit={() => event?.preventDefault()}>
           <div className="style-form">
             <label>Nome</label>
-            <input type="text" />
+            <input type="text" onChange={(e) => setName(e.target.value)}/>
           </div>
           <div className="style-form">
             <label>E-mail</label>
-            <input type="email" />
+            <input type="email" onChange={(e) => setEmail(e.target.value)}/>
           </div>
           <div className="style-form">
             <label>Mensagem</label>
-            <textarea name="mensagem" id="mensagem"></textarea>
+            <textarea name="mensagem" id="mensagem" onChange={(e) => setMensagem(e.target.value)}></textarea>
           </div>
 
           <ButtonComponent
             label='Enviar'
             style={Style}
+            onClick={submmitForm}
           />
         </form>
         <div className="redesSociais">
